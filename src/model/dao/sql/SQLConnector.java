@@ -25,7 +25,7 @@ public class SQLConnector {
     public static SQLConnector getInstance(){
         if (instance == null ){
             // NOT a good practice to hardcode connection data! Be aware of this for your project delivery ;)
-            instance = new SQLConnector("root", "L(1!Ov-8Uz1h7f1h", "localhost", 3306, "stock_db");
+            instance = new SQLConnector("root", "", "localhost", 3306, "stock_db");
             instance.connect();
         }
         return instance;
