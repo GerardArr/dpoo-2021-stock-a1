@@ -26,7 +26,7 @@ public class SQLActionsDAO implements ActionsDAO {
     @Override
     public List<Action> getAllActions() {
         List<Action> actions = new LinkedList<>();
-        String query = "SELECT code, name, ects FROM Course;";
+        String query = "SELECT code, name, ects FROM Action;";
         ResultSet result = SQLConnector.getInstance().selectQuery(query);
 
         try {
