@@ -89,12 +89,6 @@ public class SQLConnector {
         }
     }
 
-
-    /**
-     * Method that executes a deletion query to the connected database.
-     *
-     * @param query String representation of the query to execute.
-     */
     public void deleteQuery(String query){
         try {
             Statement s = conn.createStatement();
@@ -106,13 +100,6 @@ public class SQLConnector {
 
     }
 
-
-    /**
-     * Method that executes a selection query to the connected database.
-     *
-     * @param query String representation of the query to execute.
-     * @return The results of the selection.
-     */
     public ResultSet selectQuery(String query){
         ResultSet rs = null;
         try {
@@ -125,11 +112,6 @@ public class SQLConnector {
         return rs;
     }
 
-
-    /**
-     * Method that closes the inner connection to the database. Ideally, users would disconnect after
-     * using the shared instance.
-     */
     public void disconnect(){
         try {
             conn.close();
