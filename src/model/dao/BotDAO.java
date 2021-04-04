@@ -7,17 +7,17 @@ import java.util.List;
 public interface BotDAO {
 
     /**
-     * Method that saves a specific student, persisting it.
+     * Method that saves a specific bot, persisting it.
      *
      * @param bot The new bot to save.
      */
-    void addStudent(Bot bot);
+    void addBot(Bot bot);
 
     /**
-     * Method that reads the persisted information, returning all stored students.
+     * Method that reads the persisted information, returning all stored bots.
      *
-     * @return A list containing all persisted students.
+     * @return A list containing all persisted bots.
      */
-    List<Bot> getAllStudents();
+    List<Bot> getAllBots();
 
 }

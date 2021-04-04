@@ -11,8 +11,8 @@ import java.util.List;
 public class SQLBotDAO implements BotDAO {
 
     @Override
-    public void addStudent(Bot bot) {
-        String query = "INSERT INTO Student(id, login, full_name, birth_date) VALUES ('" +
+    public void addBot(Bot bot) {
+        String query = "INSERT INTO Bot(id, login, full_name, birth_date) VALUES ('" +
                 bot.getId() + "', '" +
                 bot.getLogin() + "', '" +
                 bot.getFullName() + "', '" +
@@ -23,9 +23,9 @@ public class SQLBotDAO implements BotDAO {
     }
 
     @Override
-    public List<Bot> getAllStudents() {
+    public List<Bot> getAllBots() {
         List<Bot> students = new LinkedList<>();
-        String query = "SELECT id, login, full_name, birth_date FROM Student;";
+        String query = "SELECT id, login, full_name, birth_date FROM Bot;";
         ResultSet result = SQLConnector.getInstance().selectQuery(query);
 
         try {

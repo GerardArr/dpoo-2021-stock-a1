@@ -10,8 +10,8 @@ public class Bot {
 
 
     // Parametrized constructor.
-    public Bot(int studentId,  String login, String fullName,String birthDate) {
-        this.id = studentId;
+    public Bot(int botId,  String login, String fullName, String birthDate) {
+        this.id = botId;
         this.login = login;
         this.fullName = fullName;
         this.birthDate = birthDate;
@@ -19,9 +19,9 @@ public class Bot {
 
 
     /**
-     * Getter for the student's id.
+     * Getter for the bots id.
      *
-     * @return The student's id, an integer.
+     * @return The bots id, an integer.
      */
     public int getId() {
         return id;
@@ -29,9 +29,9 @@ public class Bot {
 
 
     /**
-     * Getter for the student's login.
+     * Getter for the bots login.
      *
-     * @return A string representation of the student's login.
+     * @return A string representation of the bots login.
      */
     public String getLogin() {
         return login;
@@ -39,9 +39,9 @@ public class Bot {
 
 
     /**
-     * Getter for the student's full name.
+     * Getter for the bots full name.
      *
-     * @return A string representation of the student's full name.
+     * @return A string representation of the bots full name.
      */
     public String getFullName() {
         return fullName;
@@ -49,9 +49,9 @@ public class Bot {
 
 
     /**
-     * Getter for the student's date of birth.
+     * Getter for the bots date of birth.
      *
-     * @return A string representation of the student's date of birth.
+     * @return A string representation of the bots date of birth.
      */
     public String getBirthDate() {
         return birthDate;
