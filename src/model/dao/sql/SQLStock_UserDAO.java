@@ -1,7 +1,6 @@
 package model.dao.sql;
 
 import model.dao.Stock_UserDAO;
-import model.dao.Stock_UserDAO;
 import model.entity.User;
 
 import java.sql.ResultSet;
@@ -24,8 +23,8 @@ public class SQLStock_UserDAO implements Stock_UserDAO {
     }
 
     @Override
-    public List<User> getAllStudents() {
-        List<User> user = new LinkedList<>();
+    public List<User> getAllUsers() {
+        List<User> users = new LinkedList<>();
         String query = "SELECT id, login, full_name, birth_date FROM Student;";
         ResultSet result = SQLConnector.getInstance().selectQuery(query);
 
@@ -36,11 +35,17 @@ public class SQLStock_UserDAO implements Stock_UserDAO {
                 String email = result.getString("full_name");
                 String password = result.getString("birth_date");
 
-                user.add(new User(userId, name, email, password, 1000));
+                users.add(new User(userId, name, email, password, 0));
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return user;
+        return users;
+    }
+
+    @Override
+    public void deleteUser (String code) {
+        String query = "DELETE FROM Action WHERE code = '" + code + "';";
+        SQLConnector.getInstance().deleteQuery(query);
     }
 }
