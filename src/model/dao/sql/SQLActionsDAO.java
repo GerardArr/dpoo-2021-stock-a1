@@ -12,7 +12,7 @@ import java.util.List;
 public class SQLActionsDAO implements ActionsDAO {
 
     @Override
-    public void addCourse(Action action) {
+    public void addAction (Action action) {
 
         String query = "INSERT INTO Action(code, name, ects) VALUES ('" +
                 action.getCode() + "', '" +
@@ -24,8 +24,8 @@ public class SQLActionsDAO implements ActionsDAO {
     }
 
     @Override
-    public List<Action> getAllCourses() {
-        List<Action> courses = new LinkedList<>();
+    public List<Action> getAllActions() {
+        List<Action> actions = new LinkedList<>();
         String query = "SELECT code, name, ects FROM Course;";
         ResultSet result = SQLConnector.getInstance().selectQuery(query);
 
@@ -35,17 +35,17 @@ public class SQLActionsDAO implements ActionsDAO {
                 String name = result.getString("name");
                 int ects = result.getInt("ects");
 
-                courses.add(new Action(code, name, ects));
+                actions.add(new Action(code, name, ects));
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return courses;
+        return actions;
     }
 
     @Override
-    public void deleteCourse(String code) {
-        String query = "DELETE FROM Course WHERE code = '" + code + "';";
+    public void deleteAction (String code) {
+        String query = "DELETE FROM Action WHERE code = '" + code + "';";
         SQLConnector.getInstance().deleteQuery(query);
     }
 

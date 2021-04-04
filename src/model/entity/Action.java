@@ -16,9 +16,9 @@ public class Action {
 
 
     /**
-     * Getter for the course's code.
+     * Getter for the action's code.
      *
-     * @return A string representation of the course's code.
+     * @return A string representation of the action's code.
      */
     public String getCode() {
         return code;

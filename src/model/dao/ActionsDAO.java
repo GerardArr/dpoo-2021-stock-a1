@@ -11,20 +11,20 @@ public interface ActionsDAO {
      *
      * @param action The new action to save.
      */
-    void addCourse(Action action);
+    void addAction(Action action);
 
     /**
      * Method that reads the persisted information, returning all stored actions.
      *
      * @return A list containing all persisted actions.
      */
-    List<Action> getAllCourses();
+    List<Action> getAllActions();
 
     /**
      * Method that deletes a persisted action, by its code.
      *
      * @param code A string representation of the persisted actions's code.
      */
-    void deleteCourse(String code);
+    void deleteAction(String code);
 
 }

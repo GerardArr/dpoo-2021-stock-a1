@@ -24,7 +24,7 @@ public class SQLBotDAO implements BotDAO {
 
     @Override
     public List<Bot> getAllBots() {
-        List<Bot> students = new LinkedList<>();
+        List<Bot> bots = new LinkedList<>();
         String query = "SELECT id, login, full_name, birth_date FROM Bot;";
         ResultSet result = SQLConnector.getInstance().selectQuery(query);
 
@@ -35,11 +35,11 @@ public class SQLBotDAO implements BotDAO {
                 String studentName = result.getString("full_name");
                 String birthDate = result.getString("birth_date");
 
-                students.add(new Bot(id, login, studentName, birthDate));
+                bots.add(new Bot(id, login, studentName, birthDate));
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return students;
+        return bots;
     }
 }
