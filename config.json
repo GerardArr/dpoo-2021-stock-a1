@@ -1,0 +1,7 @@
+{
+  "port" : 3306,
+  "ip" : "localhost",
+  "database" : "stock_db",
+  "username" : "root",
+  "password": ""
+}
